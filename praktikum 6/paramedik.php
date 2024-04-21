@@ -9,6 +9,8 @@ $pasiens = $dbh->query($query);
 <div class="container-fluid px-4">
     <div class="d-flex mt-4">
         <h3 class="me-auto">Paramedik</h3>
+        <a href="paramedik_create.php" class="btn btn-primary">Tambah</a>
+
     </div>
     <hr>
     <table class="table mt-4">
@@ -22,11 +24,14 @@ $pasiens = $dbh->query($query);
             <th>No Telp</th>
             <th>Alamat</th>
             <th>Unit Kerja</th>
+            <th>Opsi</th>
+            <th></th>
         </tr>
         <?php
         foreach($pasiens as $pasien): 
         ?>
             <tr>
+                <td><?= $pasien["id"]?></td>
                 <td><?= $pasien["nama"]?></td>
                 <td><?= $pasien["gender"]?></td>
                 <td><?= $pasien["tmp_lahir"]?></td>
@@ -35,6 +40,15 @@ $pasiens = $dbh->query($query);
                 <td><?= $pasien["telpon"]?></td>
                 <td><?= $pasien["alamat"]?></td>
                 <td><?= $pasien["unit_id_kerja"]?></td>
+                <td>
+                <a class="btn btn-primary" href="paramedik_edit.php?id=<?= $pasien["id"]?>">Edit</a>
+
+                </td>
+                
+                <td>
+                <a class="btn btn-danger" href="paramedik_delete.php?id=<?= $pasien["id"]?>">Hapus</a>
+
+                </td>
             </tr>
         <?php endforeach ?>
     </table>
