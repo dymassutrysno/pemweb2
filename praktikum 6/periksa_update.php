@@ -18,4 +18,4 @@ if ($dbh->query($query)) {
     header("Location: periksa.php");
 } else{
     echo"Gagal menyimpan data";
-}
+};

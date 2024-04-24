@@ -67,7 +67,7 @@ $pasien = $dbh->query("SELECT * FROM periksa WHERE id = $id")->fetch();
     <label for="dokter_id" class="col-4 col-form-label">Dokter</label> 
     <div class="col-8">
       <select id="dokter_id" name="dokter_id" class="custom-select" required="required">
-        <option value="">-- Pilih Kelurahan --</option>
+        <option value="">-- Pilih Paramedik --</option>
         <?php foreach ($dokter as $kel) : ?>
             <option <?= $pasien["dokter_id" ] == $kel['id'] ? 'selected' : '' ?> value="<?= $kel['id'] ?>"><?= $kel['nama'] ?></option>
           <?php endforeach; ?>
